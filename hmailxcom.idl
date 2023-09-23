@@ -1,0 +1,38 @@
+// hmailxcom.idl : IDL source for hmailxcom
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (hmailxcom.tlb) and marshalling code.
+
+import "oaidl.idl";
+
+[
+	object,
+	uuid(11e707da-a5b7-4bbd-8899-bec106bc1d6e),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface Iclientapi : IDispatch
+{
+	[id(1), helpstring("Method SayHello")]
+		HRESULT sayhello();
+
+};
+[
+	uuid(e95a1fc5-59f3-47ac-b4ab-0def7d4faf6a),
+	version(1.0),
+]
+library hmailxcomLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(47415b63-022a-4685-a796-ddc5011bdb6d)
+	]
+	coclass clientapi
+	{
+		[default] interface Iclientapi;
+	};
+};
+
+import "shobjidl.idl";

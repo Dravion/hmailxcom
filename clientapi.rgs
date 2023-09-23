@@ -1,0 +1,26 @@
+HKCR
+{
+	hmailxcomLib.clientapi.1 = s 'clientapi class'
+	{
+		CLSID = s '{47415b63-022a-4685-a796-ddc5011bdb6d}'
+	}
+	hmailxcomLib.clientapi = s 'clientapi class'
+	{		
+		CurVer = s 'hmailxcomLib.clientapi.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {47415b63-022a-4685-a796-ddc5011bdb6d} = s 'clientapi class'
+		{
+			ProgID = s 'hmailxcomLib.clientapi.1'
+			VersionIndependentProgID = s 'hmailxcomLib.clientapi'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{e95a1fc5-59f3-47ac-b4ab-0def7d4faf6a}'
+			Version = s '1.0'
+		}
+	}
+}
